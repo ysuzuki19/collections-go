@@ -1,0 +1,2 @@
+# gocol
+Go collections library
