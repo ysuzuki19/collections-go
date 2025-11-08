@@ -8,7 +8,7 @@ args = ["test", "./..."]
 [job."test:live"]
 mode = "watch"
 job = "test"
-watch_list = ["src/**/*"]
+watch_list = ["**/*.go"]
 
 [job.coverage]
 mode = "shell"
