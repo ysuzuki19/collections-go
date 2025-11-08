@@ -1,2 +1,3 @@
-# gocol
+# collections-go
+
 Go collections library
