@@ -196,9 +196,11 @@ func (s *Suite) TestEquals() {
 	s3 := set.New(1, 2)
 	s4 := set.New(1, 2, 3, 4)
 	s5 := set.New(3, 2, 1) // different order, same elements
+	s6 := set.New(1, 2, 4) // same length, different elements
 
 	s.require.True(s1.Equals(s2), "sets with same elements should be equal")
 	s.require.True(s1.Equals(s5), "sets with same elements in different order should be equal")
 	s.require.False(s1.Equals(s3), "sets with different length should not be equal")
 	s.require.False(s1.Equals(s4), "sets with different elements should not be equal")
+	s.require.False(s1.Equals(s6), "sets with same length, different elements should not be equal")
 }
