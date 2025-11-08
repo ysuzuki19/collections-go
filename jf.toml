@@ -1,0 +1,29 @@
+[meta]
+version = "0.1.0"
+
+[job.test]
+command = "go"
+args = ["test", "./..."]
+
+[job."test:live"]
+mode = "watch"
+job = "test"
+watch_list = ["src/**/*"]
+
+[job.coverage]
+mode = "shell"
+script = """
+if [ ! -d .out ]; then
+    mkdir -p .out
+fi
+
+COVERAGE_PROFILE=.out/coverage.out
+LCOV_FILE=lcov.info
+go test -coverprofile=${COVERAGE_PROFILE} ./...
+go run github.com/jandelgado/gcov2lcov -infile=${COVERAGE_PROFILE} -outfile=${LCOV_FILE}
+"""
+
+[job."coverage:live"]
+mode = "watch"
+job = "coverage"
+watch_list = ["**/*.go"]
