@@ -8,7 +8,11 @@ require (
 	github.com/davecgh/go-spew v1.1.1 // indirect
 	github.com/jandelgado/gcov2lcov v1.1.1 // indirect
 	github.com/pmezard/go-difflib v1.0.0 // indirect
+	github.com/ysuzuki19/robustruct v0.3.4 // indirect
 	gopkg.in/yaml.v3 v3.0.1 // indirect
 )
 
-tool github.com/jandelgado/gcov2lcov
+tool (
+	github.com/jandelgado/gcov2lcov
+	github.com/ysuzuki19/robustruct/cmd/gen/testdocgen
+)
