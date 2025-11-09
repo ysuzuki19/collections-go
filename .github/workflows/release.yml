@@ -8,7 +8,7 @@ jobs:
     steps:
       - name: Request proxy.golang.org cache
         run: |
-          curl -X POST https://proxy.golang.org/github.com/ysuzuki19/robustruct/@v/${{ github.event.release.tag_name }}.info
+          curl -X POST https://proxy.golang.org/github.com/ysuzuki19/collections-go/@v/${{ github.event.release.tag_name }}.info
       - name: Request pkg.go.dev documentation update
         run: |
-          curl -X POST https://pkg.go.dev/fetch/github.com/ysuzuki19/robustruct@${{ github.event.release.tag_name }}
+          curl -X POST https://pkg.go.dev/fetch/github.com/ysuzuki19/collections-go@${{ github.event.release.tag_name }}
