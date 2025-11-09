@@ -12,8 +12,9 @@ go get github.com/ysuzuki19/collections-go
 
 ## Available Collections
 
-- **[Set](./set/README.md)** - A generic set implementation with common set operations
-  [![Docs](https://pkg.go.dev/badge/github.com/ysuzuki19/collections-go/set.svg)](https://pkg.go.dev/github.com/ysuzuki19/collections-go/set)
+- Set - A generic set implementation with common set operations
+  - [README](./set/README.md)
+  - [![Docs](https://pkg.go.dev/badge/github.com/ysuzuki19/collections-go/set.svg)](https://pkg.go.dev/github.com/ysuzuki19/collections-go/set)
 
 ## Quick Start
 
