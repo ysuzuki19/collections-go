@@ -85,7 +85,7 @@ func (s *Suite) TestWrapf() {
 }
 
 func (s *Suite) TestError() {
-	// testdoc begin Error
+	// testdoc begin Error.Error
 	err := traceback.New("something went wrong")
 	fmt.Println(err.Error())
 	// testdoc end

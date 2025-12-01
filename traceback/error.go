@@ -106,6 +106,11 @@ func Wrapf(err error, format string, args ...any) *Error {
 }
 
 // Error returns the error message.
+//
+// Example:
+//
+//	err := traceback.New("something went wrong")
+//	fmt.Println(err.Error())
 func (e *Error) Error() string {
 	if e.cause != nil {
 		return e.cause.Error()
@@ -114,6 +119,12 @@ func (e *Error) Error() string {
 }
 
 // Frames returns the captured stack frames.
+//
+// Example:
+//
+//	err := traceback.New("something went wrong")
+//	frames := err.Frames()
+//	fmt.Println(frames.String())
 func (e *Error) Frames() frame.Frames {
 	return e.frames
 }
