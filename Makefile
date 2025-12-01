@@ -2,6 +2,9 @@
 
 test:
 	@go test ./...
+
+generate:
+	@go generate ./...
 	
 coverage:
 	@./scripts/coverage.sh
