@@ -49,6 +49,8 @@ func (s *Suite) TestFrom() {
 	// testdoc end
 	s.Nil(result)
 	s.Error(err)
+
+	s.Nil(traceback.From(nil))
 }
 
 func (s *Suite) TestWrap() {
@@ -61,6 +63,8 @@ func (s *Suite) TestWrap() {
 	// testdoc end
 	s.Nil(result)
 	s.Error(err)
+
+	s.Nil(traceback.Wrap(nil, "message"))
 }
 
 func (s *Suite) TestWrapf() {
@@ -75,6 +79,25 @@ func (s *Suite) TestWrapf() {
 	}
 	// testdoc end
 	s.Nil(result)
+	s.Error(err)
+
+	s.Nil(traceback.Wrapf(nil, "format %d", 1))
+}
+
+func (s *Suite) TestError() {
+	// testdoc begin Error
+	err := traceback.New("something went wrong")
+	fmt.Println(err.Error())
+	// testdoc end
+	s.Error(err)
+}
+
+func (s *Suite) TestFrames() {
+	// testdoc begin Error.Frames
+	err := traceback.New("something went wrong")
+	frames := err.Frames()
+	fmt.Println(frames.String())
+	// testdoc end
 	s.Error(err)
 }
 
